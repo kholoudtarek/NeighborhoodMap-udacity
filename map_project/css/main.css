@@ -1,0 +1,59 @@
+#map{
+    height: 100vh;
+    border-radius: 10px;
+    border: 2px solid #000099;
+    padding: 10px;
+}
+#search-box{
+    border-radius: 20px;
+    border: 2px solid #000099;
+    background-color: #e6f2ff;
+    padding: 20px;
+    width: 100%;
+    height: 30px;
+}
+#listplaces{
+    background-color: #66b3ff;
+    border-radius: 10px;
+    border: 2px solid #000099;
+    width: 100%;
+    height: 590px;
+}
+#neededplace{
+font-family:  Times, Georgia, Serif;
+font-weight: bold;
+color: #000099 ;
+font-size: 125%;
+font-style: italic;
+
+}
+#window{
+    background-color: #e6f2ff;
+    font-family: Times, Georgia, Serif;
+    font-weight: bold;
+    color: #000099 ;
+    font-size: 100%;
+    border-radius: 10px;
+    border: 2px solid #000099;
+}
+
+@media only screen and (max-width: 828px) {
+    #listplaces {
+    max-height: 130px;
+    max-width: 100%;
+}
+
+    #search-box{
+        margin-left: 0;
+    }
+.col-md-3{
+    max-width: 100%;
+    height: 20vh;
+}
+.col-md-9{
+    max-width: 100%;
+}
+   /* #map{
+     max-width: ;
+    } */
+}
