@@ -53,7 +53,10 @@ function initMap() {
         },
         zoom: 12,
     });
-
+          /// define lolo function :D//
+          var lolo=function(){
+            populateInfoWindow(this, infowindow);
+          };
     // ** show markers by push marker to marker array **//
     for (var i = 0; i < locations.length; i++) {
         var position = locations[i].location;
@@ -68,12 +71,14 @@ function initMap() {
         //push marker on the map by calling//
         markers.push(marker);
         marker.setMap(map);
+
+        // **add listner to show info window content**//
+        marker.addListener('click','lolo'
+            //populateInfoWindow(this, infowindow);
+       );
+
         mapViewModel.locations()[i].marker = marker;
     }
-        // **add listner to show info window content**//
-        marker.addListener('click', function () {
-            populateInfoWindow(this, infowindow);
-        });
     var infowindow = new google.maps.InfoWindow();
 }
 
@@ -95,7 +100,7 @@ function populateInfoWindow(marker, infowindow) {
                             var element = articleList[article];
                             str = "<a href='https://en.wikipedia.org/wiki/" + element + "'>" + element + "</a>"
                         }
-                    };
+                    }
                 }
                 //**Create the info window content**//
                 infowindow.setContent('<div id="window"><p><i>School Title:</i> ' + marker.title + '</p>'+ ' <p>For more information visit :</p>' + str + ' </div>');
@@ -115,7 +120,7 @@ function populateInfoWindow(marker, infowindow) {
                         setTimeout(function () {
                             marker.setAnimation()
                         }, 1800);
-                    };
+                    }
                 }
 
                 marker.addListener('click', toggleBounce());
@@ -128,9 +133,9 @@ function populateInfoWindow(marker, infowindow) {
                    alert(xhr.status);
                    alert(thrownError);
             }
-        })
+        });
       }
-};
+}
 //**some functions and methods ideas are done through some github and google searches**//
 var MapViewModel = function () {
     var self = this;
