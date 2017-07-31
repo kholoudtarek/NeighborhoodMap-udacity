@@ -98,7 +98,7 @@ function populateInfoWindow(marker, infowindow) {
                     for (var article in articleList) {
                         if (articleList.hasOwnProperty(article)) {
                             var element = articleList[article];
-                            str = "<a href='https://en.wikipedia.org/wiki/" + element + "'>" + element + "</a>"
+                            str = "<a href='https://en.wikipedia.org/wiki/" + element + "'>" + element + "</a>" ;
                         }
                     }
                 }
@@ -118,7 +118,7 @@ function populateInfoWindow(marker, infowindow) {
                     } else {
                         marker.setAnimation(google.maps.Animation.BOUNCE);
                         setTimeout(function () {
-                            marker.setAnimation()
+                            marker.setAnimation() ;
                         }, 1800);
                     }
                 }
