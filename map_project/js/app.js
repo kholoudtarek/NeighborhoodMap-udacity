@@ -68,16 +68,14 @@ function initMap() {
         //push marker on the map by calling//
         markers.push(marker);
         marker.setMap(map);
-
+        mapViewModel.locations()[i].marker = marker;
+    }
         // **add listner to show info window content**//
         marker.addListener('click', function () {
             populateInfoWindow(this, infowindow);
         });
-
-        mapViewModel.locations()[i].marker = marker;
-    }
     var infowindow = new google.maps.InfoWindow();
-};
+}
 
 //Dynamically Populate InfoWindow with Automated HTML//
 function populateInfoWindow(marker, infowindow) {
@@ -97,7 +95,7 @@ function populateInfoWindow(marker, infowindow) {
                             var element = articleList[article];
                             str = "<a href='https://en.wikipedia.org/wiki/" + element + "'>" + element + "</a>"
                         }
-                    }
+                    };
                 }
                 //**Create the info window content**//
                 infowindow.setContent('<div id="window"><p><i>School Title:</i> ' + marker.title + '</p>'+ ' <p>For more information visit :</p>' + str + ' </div>');
@@ -117,7 +115,7 @@ function populateInfoWindow(marker, infowindow) {
                         setTimeout(function () {
                             marker.setAnimation()
                         }, 1800);
-                    }
+                    };
                 }
 
                 marker.addListener('click', toggleBounce());
@@ -132,7 +130,7 @@ function populateInfoWindow(marker, infowindow) {
             }
         })
       }
-}
+};
 //**some functions and methods ideas are done through some github and google searches**//
 var MapViewModel = function () {
     var self = this;
